@@ -11,6 +11,18 @@ Class {
 	#category : #'formation-BL'
 }
 
+{ #category : #testing }
+DTOChecker >> canBeDTO: aFamixClass [
+	aFamixClass ifNil: [ ^false ].
+	
+	^aFamixClass isStub not
+]
+
+{ #category : #api }
+DTOChecker >> dtosFromServices [
+	^(self regexpTypes: 'Uc.*') flatCollectAsSet: [ :uc | (self services: uc) flatCollect: [:s | self serviceDTO: s ] ]
+]
+
 { #category : #api }
 DTOChecker >> dtosFromSuperClass [
 	| rootclass |
@@ -40,4 +52,21 @@ DTOChecker >> model: anObject [
 { #category : #search }
 DTOChecker >> regexpTypes: regexp [
 	^model allTypes select: [ :typ | regexp asRegex matches: typ name ]
+]
+
+{ #category : #api }
+DTOChecker >> serviceDTO:  aFamixMethod [
+
+	^({ aFamixMethod declaredType } , (aFamixMethod parameters collect: #declaredType))
+		select: [ :candidate | self canBeDTO: candidate ]
+
+]
+
+{ #category : #api }
+DTOChecker >> services: aFamixClass [ 
+	^aFamixClass methods reject: [ :m |
+		m isPublic not or:
+		[ m name = '<Initializer>' or:
+		[ m isConstructor ] ]
+	]
 ]
