@@ -11,6 +11,22 @@ Class {
 	#category : #'formation-BL'
 }
 
+{ #category : #api }
+DTOChecker >> dtosFromSuperClass [
+	| rootclass |
+	(self regexpTypes: 'BLLazyServerPojo')
+	ifEmpty: [ ^#() ]
+	ifNotEmpty: [ :types |
+		types ifEmpty: [ ^#() ].
+		rootclass := types anyOne
+	].
+
+	^rootclass subclassHierarchy
+		reject: [ :candidate |
+			candidate isAbstract or:
+			[ candidate name asLowercase includesSubstring: 'enum' ] ]
+]
+
 { #category : #accessing }
 DTOChecker >> model [
 

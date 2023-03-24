@@ -28,6 +28,41 @@ DTOCheckerTest >> setUp [
 ]
 
 { #category : #tests }
+DTOCheckerTest >> testDTOsFromSuperclass [
+	| class |
+	
+	class := self entity: FamixJavaClass named: 'A_DTO'.
+	(self entity: FamixJavaClass named: 'BLLazyServerPojo')
+		addSubInheritance: (FamixJavaInheritance new subclass: class ; yourself) .
+
+	self assert: checker dtosFromSuperClass size equals: 1.
+	self assert: checker dtosFromSuperClass anyOne equals: class
+]
+
+{ #category : #tests }
+DTOCheckerTest >> testDTOsFromSuperclassNoAbstract [
+	| class |
+	
+	class := self entity: FamixJavaClass named: 'A_DTO'.
+	class isAbstract: true.
+	(self entity: FamixJavaClass named: 'BLLazyServerPojo')
+		addSubInheritance: (FamixJavaInheritance new subclass: class ; yourself) .
+
+	self assert: checker dtosFromSuperClass size equals: 0
+]
+
+{ #category : #tests }
+DTOCheckerTest >> testDTOsFromSuperclassNoEnum [
+	| class |
+	
+	class := self entity: FamixJavaClass named: 'A_Enum'.
+	(self entity: FamixJavaClass named: 'BLLazyServerPojo')
+		addSubInheritance: (FamixJavaInheritance new subclass: class ; yourself) .
+
+	self assert: checker dtosFromSuperClass size equals: 0
+]
+
+{ #category : #tests }
 DTOCheckerTest >> testModelSetter [
 	self assert: checker model equals: model
 ]
