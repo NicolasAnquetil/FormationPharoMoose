@@ -22,9 +22,7 @@ DTOChecker >> dtosFromSuperClass [
 	].
 
 	^rootclass subclassHierarchy
-		reject: [ :candidate |
-			candidate isAbstract or:
-			[ candidate name asLowercase includesSubstring: 'enum' ] ]
+		reject: [ :candidate | candidate name asLowercase includesSubstring: 'enum' ]
 ]
 
 { #category : #accessing }

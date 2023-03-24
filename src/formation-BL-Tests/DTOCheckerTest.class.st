@@ -40,18 +40,6 @@ DTOCheckerTest >> testDTOsFromSuperclass [
 ]
 
 { #category : #tests }
-DTOCheckerTest >> testDTOsFromSuperclassNoAbstract [
-	| class |
-	
-	class := self entity: FamixJavaClass named: 'A_DTO'.
-	class isAbstract: true.
-	(self entity: FamixJavaClass named: 'BLLazyServerPojo')
-		addSubInheritance: (FamixJavaInheritance new subclass: class ; yourself) .
-
-	self assert: checker dtosFromSuperClass size equals: 0
-]
-
-{ #category : #tests }
 DTOCheckerTest >> testDTOsFromSuperclassNoEnum [
 	| class |
 	
