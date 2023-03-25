@@ -7,9 +7,9 @@ keywords: pharo, moose, famix
 ---
 <!-- headingDivider: 1 -->
 <!-- paginate: true -->
-<!-- footer: "Pharo/Moose @ Berger-Levrault" -->
+<!-- footer: "Pharo -- Environment d'exécution" -->
 
-# Environnement d'exécution
+# Pharo -- Environnement d'exécution
 
 - Playground
 - Transcript

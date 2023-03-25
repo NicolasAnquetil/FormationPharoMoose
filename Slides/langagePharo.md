@@ -7,7 +7,7 @@ keywords: pharo, moose, famix
 ---
 <!-- headingDivider: 1 -->
 <!-- paginate: true -->
-<!-- footer: "Pharo/Moose @ Berger-Levrault" -->
+<!-- footer: "Pharo -- Le langage" -->
 
 # Pharo -- Le langage
 
@@ -96,6 +96,15 @@ keywords: pharo, moose, famix
   - Mots clés : `2 between: 10 and: 20` (méthode `between:and:`)
 - Priorité dans l'ordre ci-dessus
 - Note: `+`, `<=`, `~=` sont des méthodes pas des opérateurs
+
+# Le langage
+
+- If/Then/Else 
+  - `(1 > 2) ifTrue: [ "bloc then" ] ifFalse: [ "bloc else" ]`
+- Boucles
+  - `10 timesRepeat: [:i | "corps de la boucle" ]`
+  - `#(Chico Harpo Groucho Zeppo) do: [:marx | "corps de la boucle" ]`
+  - `[ "test de fin" ] whileTrue: [ "corps de la boucle" ]`
 
 # Le langage
 

@@ -5,9 +5,9 @@
 %.pdf : %.md
 	npx marp --pdf $<
 
-all: introPharo.html langagePharo.html execPharo.html
+all: introPharo.html langagePharo.html execPharo.html idePharo.html
 
-pdf: introPharo.pdf langagePharo.pdf execPharo.pdf
+pdf: introPharo.pdf langagePharo.pdf execPharo.pdf idePharo.pdf
 
 introPharo.html: Images/pharoSyntax.png
 

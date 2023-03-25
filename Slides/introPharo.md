@@ -30,9 +30,5 @@ Formation Pharo/Moose @ Berger-Levrault
 # ![Pharo](https://pharo.org/web/files/pharo.png)
 
 - [Le langage](./langagePharo.html)
-- L'IDE (environnement de développement)
+- [L'IDE](./idePharo.html) (environnement de développement)
 - [Environnement d'exécution](./execPharo.html)
-
-# L'IDE
-
-- SystemBrowser
