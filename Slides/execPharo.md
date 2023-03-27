@@ -64,3 +64,21 @@ rnd := Random new.
 - Trouver les sous-classes de `BLLazyServerPojo` dont le nom ne contient pas 'Abstract', 'DTO', ou 'Enum'
 - Trouver les classes dont le nom contient 'DTO' qui n'heritent pas de `BLLazyServerPojo` (ex: `ProductDTO`)
 
+
+# *Cheat Sheet* -- Pharo
+
+- Méthodes sur les collections : `#select:`, `#collect:`, `#reject:`, `#detect:`, `#detect:ifNone:`
+- Tester le début d'une string : `<string> beginsWith: <subString>`
+- Tester la fin d'une string : `<string> endsWith: <subString>`
+- Tester la présence d'une sous-chaîne : `<string> includesSubstring: <subString>`
+- Passer une string en minuscules: `#asLowercase`
+
+# *Cheat Sheet* -- Moose/Famix
+
+- Toutes les classes d'un modèle :
+  - `<model> allClasses`
+  - `<model> allWithType: FamixJavaClass`
+- Les sous-classes d'une classe :
+  - `#directSubclasses`
+  - `#subclassHierarchy`
+- Test si une classe est déclarée abstraite: `#isAbstract`

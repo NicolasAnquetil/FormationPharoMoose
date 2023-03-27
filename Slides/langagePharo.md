@@ -16,68 +16,65 @@ keywords: pharo, moose, famix
 - Simple et élégant
 - Complètement Objet
 
-# Le langage
+# Mots réservés
 
-6 mots réservés :
 - `nil`
 - `true`, `false`
 - `self`
 - `super`
 - (`thisContext`)
 
-# Le langage
+# Instructions
 
 - Pas d'instruction de boucle
 - Pas d'instruction de test
-- Pas d'expressions arithmétiques ou booléennes
 - Pas d'opérateurs
+  - Pas d'expressions arithmétiques ou booléennes
 - Tout est fait par **message**
 
-# Le langage
+# Instructions
 
-- Instructions
-  - Affectation : `variable := 5`
-  - Retour de  méthode : `^ 42`
-  - Envoi de message : `object aMethod.`
+- Affectation : `variable := 5`
+- Retour de  méthode : `^ 42`
+- Envoi de message : `object aMethod.`
 - Le point (`.`) comme *séparateur* d'instruction
 
-# Le langage
+# Variables
 
-- Variables
-  - non typées statiquement
-  - Doivent être déclarées
-  - ex: `| x y autreVariable |`
-- Par convention, CamelCase, jamais de underscore (`_`)
+- Non typées statiquement
+- Doivent être déclarées
+- Parmètres de méthodes : `#between: min and: max`
+- Variables locales (temporaires) : `| x y autreVariable |`
+- Par convention, nomage CamelCase, jamais de underscore (`_`)
 
-# Le langage
+# Litéraux et commentaires
 
-- Litéraux
-  - Nombre : `42`, `3.14`, `2e25`
-  - Chaîne de caractères : `'This is a String with ''quotes'' !'`
-  - Symbole (chaîne de caractères unique) : `#aSymbol`, `#'More complex!'`
-  - Caractères : `$a`, `$:`, `$'`, ...
+- Nombre : `42`, `3.14`, `2e25`
+- Chaîne de caractères : `'This is a String with ''quotes'' !'`
+- Symbole (chaîne de caractères unique) : `#aSymbol`, `#'More complex!'`
+- Caractères : `$a`, `$:`, `$'`, ...
 - Commentaires : `"Il est important de commenter les classes et les méthodes"`
 
 
-# Le langage
+# Tableaux
 
-- Tableaux
-  - Tableau de litéraux ("literal array") : `#( 1 $a Symbol )`
-  - Tableaux
+- Tableau de litéraux ("literal array") : `#( 1 $a Symbol )`
+- Tableaux "dynamique" : `{ 1 . 42 . 3+5 }`
+Valeurs séparées par des points `.` et évaluées
+- `#( 3+5 ) = { 3 . $+ . 5 }`
+- `{ 3+5 } = #( 8 )`
 
-# Le langage
+# Les blocs
 
-- Les blocs
-  - Méthodes anonymes, "lambda" (en fait Closure)
-  - Sans paramètres : `[ 'Hello' traceCr ]`
-  - Avec paramètres : `[ :param | 'Hello ' trace. param traceCr ]`
-  - Avec variales locales : `[ :param ||a x| 'Hello ' trace. param traceCr ]`
+- Functions anonymes, "lambda" (en fait Closure)
+- Sans paramètres : `[ 'Hello' traceCr ]`
+- Avec paramètres : `[ :param | 'Hello ' trace. param traceCr ]`
+- Avec variales locales : `[ :param ||a x| 'Hello ' trace. param traceCr ]`
 
-# Le langage
+# Les blocs
 
-- Les blocs
-  - Peuvent être passés en paramètre (très courant)
-  - Peuvent être stocké dans des variables (plus rare)
+- Peuvent être passés en paramètre (très courant)
+- Peuvent être stocké dans des variables (plus rare)
 - Exécution
   - Sans paramètres : `[ 'Hello' traceCr ] value`
   - Avec paramètres :
@@ -88,16 +85,27 @@ keywords: pharo, moose, famix
   value: 5 value: 37
   ```
 
-# Le langage
+# Les messages
 
-- Les messages
-  - Unaires : `100 factorial`, `Date today`, `#(1 2 3) average`
-  - Binaires : `1 + 2`, `1 < 2`, `1@2`
-  - Mots clés : `2 between: 10 and: 20` (méthode `between:and:`)
+- Unaires : `100 factorial`, `Date today`, `#(1 2 3) average`
+- Binaires : `1 + 2`, `1 < 2`, `1@2`
+- Mots clés : `2 between: 10 and: 20` (méthode `between:and:`)
 - Priorité dans l'ordre ci-dessus
-- Note: `+`, `<=`, `~=` sont des méthodes pas des opérateurs
+- Note: `+`, `<=`, `~=` sont des **méthodes** pas des **opérateurs**
+  - `1 + 2 * 3 = 9`
 
-# Le langage
+# Cascade
+
+- Envoi de plusieurs messages au même objet
+```St
+FamixJavaMethod new
+  name: 'squared' ;
+  signature: 'squared(int)' ;
+  mooseModel: FamixJavaModel new ;
+  yourself.
+```
+
+# "Instructions" de branchement
 
 - If/Then/Else 
   - `(1 > 2) ifTrue: [ "bloc then" ] ifFalse: [ "bloc else" ]`
@@ -106,6 +114,35 @@ keywords: pharo, moose, famix
   - `#(Chico Harpo Groucho Zeppo) do: [:marx | "corps de la boucle" ]`
   - `[ "test de fin" ] whileTrue: [ "corps de la boucle" ]`
 
-# Le langage
+# "Instructions" de branchement
 
-![Postcard](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
+- If/Then/Else 
+  - `(1 > 2) ifTrue: [ "bloc then" ] ifFalse: [ "bloc else" ]`
+
+```St
+Boolean >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock
+	self subclassResponsibility
+```
+```St
+True >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock
+	^ trueAlternativeBlock value
+```
+```St
+False >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock 
+	^ falseAlternativeBlock value
+```
+
+# Méthodes remarquables
+
+- `#subclassResponsibility` pour les méthodes abstraites
+- `#yourself` retourne le receveur (fin de cascade)
+- `#shouldNotImplement` invalide une méthode héritée :-(
+-  `#halt`, `#haltIf: [...]` point d'arrêt (*breakpoint*)
+- `#flag:` ne fait rien, message à l'intention du dévelopeur
+
+# Résumé de la Syntaxe
+
+![bg left h:400](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
+
+- [https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
+- [https://files.pharo.org/media/pharoCheatSheet.pdf](https://files.pharo.org/media/pharoCheatSheet.pdf)
