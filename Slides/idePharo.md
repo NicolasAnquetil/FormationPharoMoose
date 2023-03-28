@@ -30,6 +30,12 @@ v. exercices à la fin de [Pharo -- Environnement d'exécution](./execPharo.html
 
 ![SystemBrowser h:550](./Images/systemBrowser.png)
 
+# Exercice simple
+
+Écrire la méthode *summiel* pour les entiers (`Integer`) qui calcul un "factoriel" basé sur l'addition au lieu de la multiplication
+
+Note: Pas de triche, ne pas regarder la méthode `factorial`
+
 # Iceberg
 
 - Interface utilisateur pour GIT (Connait  GitHub et GitLab)

@@ -19,6 +19,9 @@ author: Nicolas Anquetil
 - *Tagging*, informations sémantiques comme *first class citizen*
 
 
+# Moose
+
+![Moose Overview](./Images/mooseOverview.png)
 
 # Ressources
 

@@ -104,7 +104,7 @@ FamixJavaMethod new
   yourself.
 ```
 
-# "Instructions" de branchement
+# Structures de contrôle
 
 - If/Then/Else 
   - `(1 > 2) ifTrue: [ "bloc then" ] ifFalse: [ "bloc else" ]`
@@ -113,7 +113,7 @@ FamixJavaMethod new
   - `#(Chico Harpo Groucho Zeppo) do: [:marx | "corps de la boucle" ]`
   - `[ "test de fin" ] whileTrue: [ "corps de la boucle" ]`
 
-# "Instructions" de branchement
+# Structures de contrôle
 
 - If/Then/Else 
   - `(1 > 2) ifTrue: [ "bloc then" ] ifFalse: [ "bloc else" ]`

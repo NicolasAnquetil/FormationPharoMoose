@@ -38,3 +38,4 @@ Formation Pharo/Moose @ Berger-Levrault
 - Pharo Discord : [https://discord.gg/XCU9Vguv](https://discord.gg/XCU9Vguv)
 - BL/Evref Discord : [https://discord.gg/Prc7fWyX](https://discord.gg/Prc7fWyX)
 - BL/Evref mailing list : [evref-bl@inria.fr](evref-bl@inria.fr)
+- Livres : [https://books.pharo.org/](https://books.pharo.org/)

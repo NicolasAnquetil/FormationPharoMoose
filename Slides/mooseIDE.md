@@ -23,6 +23,10 @@ author: Nicolas Anquetil
 - Échangent des informations sur des bus de données
 - Bus véhiculent des entités Famix
 
+# Architecture
+
+![Moose Architecture h:450](./Images/mooseArchi.png)
+
 # Micro-Outils
 
 ![bg right:35% h:600](./Images/mooseMenu.png)
@@ -35,6 +39,22 @@ author: Nicolas Anquetil
   - *Entities exporter* : export CSV d'entités
   - ...
 
-# Architecture
+# Micro-Outils
 
-![Moose Architecture h:450](./Images/mooseArchi.png)
+![bg right:60% w:700](./Images/mooseToolHeader.png)
+- Mode de réception
+- Bus
+- Tag
+- Configuration
+- Inspection
+- Propagation
+
+# Interaction avec les bus
+
+- Mode de réception
+  - *Follow* : traite "normalement" les entités reçues sur le bus
+  - *Freeze* : ne lit pas sur le bus (mais peut écrire)
+  - *Highlight* : met en exergue des nouvelles entités reçues dans le contexte des entités affichées précédemment
+- "Bus: " : sélection/création de bus à suivre et sur le(s)-quel(s) écrire
+- *Propagate* : Écrire les entités courantes de l'outil sur le(s) bus qu'il suit
+- Note: Un outil peut n'être attaché à aucun bus (préservation d'un résultat obtenu, v. mode *Freeze*)
