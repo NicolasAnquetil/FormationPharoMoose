@@ -1,9 +1,8 @@
 ---
 marp: true
 title: Moose Software Analysis Framework
-description: Formation Pharo/Moose @ Berger-Levrault
+description: Moose Training
 author: Nicolas Anquetil
-keywords: pharo, moose, famix
 ---
 <!-- headingDivider: 1 -->
 <!-- paginate: true -->
@@ -11,13 +10,14 @@ keywords: pharo, moose, famix
 
 # Moose
 
-- Méta-Modèles Famix (multi-langage)
-- *MooseQuery* to navigate and search models
-- *MooseIDE* offering tools on models
-  - Query
-  - Visualizations
-  - ...
-- Environment to build new tools
+- Une plateforme pour l'analyse et la manipulation de logiciels
+  - Plateforme évolutive pour construire des nouveaux outils
+- Méta-Modèles [Famix](./famix.html), modélisation de logiciels (polyglote)
+- *MooseQuery*, navigation et recherche dans un modèle
+- [Roassal](./roassal.html), moteur de création de visualizations interactive
+- [MooseIDE](./mooseIDE.html), environement interactif de micro-outils sur des modèles
+- *Tagging*, informations sémantiques comme *first class citizen*
+
 
 
 # Ressources
@@ -28,10 +28,3 @@ keywords: pharo, moose, famix
 - Github : [https://github.com/moosetechnology](https://github.com/moosetechnology)
   - projet [MooseIDE](https://github.com/moosetechnology/MooseIDE)
   - projet [Famix](https://github.com/moosetechnology/Famix)
-# Famix
-
-- MétaModel composable pour l'analyse logicielle statique
-
-# MooseIDE
-
-![Moose Architecture h:550](./Images/mooseArchi.png)

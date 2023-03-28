@@ -1,9 +1,8 @@
 ---
 marp: true
 title: Le langage Pharo
-description: Formation Pharo/Moose @ Berger-Levrault
+description: Pharo Training
 author: Nicolas Anquetil
-keywords: pharo, moose, famix
 ---
 <!-- headingDivider: 1 -->
 <!-- paginate: true -->
@@ -140,9 +139,24 @@ False >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock
 -  `#halt`, `#haltIf: [...]` point d'arrêt (*breakpoint*)
 - `#flag:` ne fait rien, message à l'intention du dévelopeur
 
+# Les traits
+
+- Inventés dans Squeak (ancêtre de Pharo)
+- Collection de méthodes qui sont injectés dans les classes utilisant le trait
+- Pas de l'héritage
+- Classe utilisatrice peut rejeter, renomer, réimplémenter une méthode de trait
+```St
+Trait << #FamixTClass
+	traits: {FamixTPackageable + FamixTPackageable +
+     (FamixTType - {#queryStaticIncomingAssociations . #queryStaticOutgoingAssociations}) +
+     FamixTWithAttributes + FamixTWithComments + FamixTWithInheritances +
+     FamixTWithMethods};
+...
+  ```
+
 # Résumé de la Syntaxe
 
-![bg left h:400](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
+![bg left:55% h:450](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
 
 - [https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg](https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg)
 - [https://files.pharo.org/media/pharoCheatSheet.pdf](https://files.pharo.org/media/pharoCheatSheet.pdf)

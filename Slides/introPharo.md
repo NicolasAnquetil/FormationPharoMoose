@@ -1,9 +1,8 @@
 ---
 marp: true
 title: Pharo/Moose
-description: Formation Pharo/Moose @ Berger-Levrault
+description: Pharo Training
 author: Nicolas Anquetil
-keywords: pharo, moose, famix
 ---
 <!-- headingDivider: 1 -->
 <!-- paginate: true -->
