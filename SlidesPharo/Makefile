@@ -29,9 +29,9 @@ execPharo.html: $(exec)
 
 execPharo.pdf: $(exec)
 
-langagePharo.html: $(exec)
+langagePharo.html: $(langage)
 
-langagePharo.pdf: $(exec)
+langagePharo.pdf: $(langage)
 
 idePharo.html: $(ide)
 

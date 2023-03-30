@@ -116,7 +116,7 @@ Note: Pas de triche, ne pas regarder la méthode `factorial`
 - menu `Debug`
 - `[ ... ] timeProfile`
 
-# Exercice -- Initialisation Pharo
+# Exercice -- Commencer en Pharo
 
 Créer une classe pour automatiser la recherche de DTOs
 
@@ -125,7 +125,7 @@ Créer une classe pour automatiser la recherche de DTOs
   - lui donner une variable d'instance `model`
   - créer les accesseurs
 
-# Exercice -- Initialisation GIT
+# Exercice -- Commencer en GIT
 
 - créer un projet dans Iceberg
     - ajouter le package `formation-BL` dans ce projet
@@ -135,7 +135,7 @@ Créer une classe pour automatiser la recherche de DTOs
 - faire un push
   - attention au nom de la branche par defaut (`master` vs. `main`)
 
-# Exercices -- Initialisation TDD
+# Exercices -- Commencer le TDD
 
 - créer la classe de test `DTOCheckerTest`
   - Clique droit sur `DTOChecker` puis "*Jump to test class*"

@@ -10,18 +10,23 @@ author: Nicolas Anquetil
 
 # Moose
 
-- Une plateforme pour l'analyse et la manipulation de logiciels
-  - Plateforme évolutive pour construire des nouveaux outils
-- Méta-Modèles [Famix](./famix.html), modélisation de logiciels (polyglote)
-- *MooseQuery*, navigation et recherche dans un modèle
-- [Roassal](./roassal.html), moteur de création de visualizations interactive
-- [MooseIDE](./mooseIDE.html), environement interactif de micro-outils sur des modèles
-- *Tagging*, informations sémantiques comme *first class citizen*
+Moose est une plateforme pour l'analyse et la manipulation de logiciels
+
+Elle est évolutive et conçue pour permettre de construire facilement des nouveaux outils
 
 
 # Moose
 
 ![Moose Overview](./Images/mooseOverview.png)
+
+# Les composants
+
+- Méta-Modèles [Famix](./famix.html), modélisation de logiciels (polyglote)
+- [Roassal](../SlidesRoassal/RS3.html), moteur de création de visualizations interactive
+- [MooseIDE](./mooseIDE.html), environement interactif de micro-outils sur des modèles
+- *MooseQuery*, navigation et recherche dans un modèle
+- *Tagging*, informations sémantiques comme *first class citizen*
+- *Spec*, bibliothèque de construction d'interface utilisateur
 
 # Ressources
 

@@ -5,6 +5,6 @@
 %.pdf :
 	cd `basename $@ ".pdf"` ; make pdf
 
-all: SlidesPharo.html SlidesMoose.html
+all: SlidesPharo.html SlidesMoose.html SlidesRoassal.html
 
-pdf: SlidesPharo.pdf SlidesMoose.pdf
+pdf: SlidesPharo.pdf SlidesMoose.pdf SlidesRoassal.pdf

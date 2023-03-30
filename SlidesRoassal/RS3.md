@@ -26,7 +26,7 @@ keywords: pharo, visualisation, roassal
 
 #  Exemples 
 
-# Roassal - Compsants principaux
+# Roassal - Composants principaux
 - **Canvas**
 - **Shapes**
 - **Layouts**
@@ -67,13 +67,13 @@ circle := RSCircle new.
 
 # Moduler les formes
 
-Propriétés : `#height:`, `#width:`, couleur, bordure, couleur 
+Propriétés : `#height:`, `#width:`, `#color:`, `#border:`, `#borderColor:` 
 ```smalltalk 
 rect height: 100;
      width: 50;
      color: Color red.
 ```
-![bg auto right](images/rsboxredmodified.png)
+![bg auto right:30%](images/rsboxredmodified.png)
 
 
 # Les formes
@@ -94,10 +94,11 @@ canvas open
 ![bg 90% right](images/rscanvas.png)
 
 # Application
-Pour chaque classe de la hiérarchie de la classe XXX, **collecter** un rectangle qui la décrit .
+Pour chaque classe de la hiérarchie de la classe `BLLazyServerPojo`, **collecter** un rectangle qui la décrit .
 Le résultat doit être un ensemble de formes.
 Ajouter ces formes dans un canvas et ouvrir le canvas.
 <!-- _backgroundColor: #00900020 -->
+<!-- _color: white -->
 
 # Les layouts
 - Permettent de gérer la disposition des objets sur le canvas
@@ -112,50 +113,50 @@ Ajouter ces formes dans un canvas et ouvrir le canvas.
 ```smalltalk
 RSHorizontalLineLayout on: {circle, rect}.
 canvas add: circle;
-       add: rect.
+  add: rect.
 canvas open
 ```
 
-![bg 90% right](images/horizontalLayout.png)
+![bg 85% right:40%](images/horizontalLayout.png)
 
 # Les liens
 - Lier des formes
 ```smalltalk
 line := RSLine new.
 line from: rect;
-     to: circle.
+  to: circle.
 canvas add: line.
 ```
 
-![bg 90% right](images/rsline.png)
+![bg 85% right:40%](images/rsline.png)
 
 # Les liens
 - Avec un point d'attache différent
 ```smalltalk
 line := RSLine new.
 line withBorderAttachPoint;
-     from: rect;
-     to: circle.
+  from: rect;
+  to: circle.
 canvas add: line.
 ```
 
-![bg 90% right](images/rslineborder.png)
+![bg 85% right:40%](images/rslineborder.png)
 
 # Les liens
 - Avec un builder
 ```smalltalk
 RSLineBuilder line
-	canvas: c;
-	connectFrom: #aSelectorOnTheModel.
+  canvas: c;
+  connectFrom: #aSelectorOnTheModel.
 ```
 
-![bg 90% right](images/rslineborder.png)
+![bg 85% right:40%](images/rslineborder.png)
 
 # Application
 Créer des liens entre les classes et leur super classe.
 Disposer les classe de façon à obtenir une arborescence.
 <!-- _backgroundColor: #00900020 -->
-![bg 90% right](images/treeclasses.png)
+![bg 85% right:40%](images/treeclasses.png)
 
 # Les évènements
 
