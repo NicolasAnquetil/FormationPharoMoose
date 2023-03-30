@@ -46,7 +46,7 @@
 <li>Trouver les sous-classes de  <code>BLLazyServerPojo</code>
 <ul>
 <li>En Pharo (méthodes sur les collections, accesseurs)</li>
-<li>Dans l'<em>Inspecteur</em></li>
+<li>Dans l'<em>Inspecteur</em> (inspectez le modèle)</li>
 <li>Avec l'API <em>Moose Query</em></li>
 </ul>
 </li>
@@ -66,14 +66,13 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-footer="Famix -- Méta-modèle logiciel composable" data-heading-divider="1" data-marpit-pagination="5" data-marpit-pagination-total="10" style="--paginate:true;--footer:Famix -- Méta-modèle logiciel composable;--heading-divider:1;">
 <h1><em>Cheat sheet</em> -- MooseQuery, parents/enfants</h1>
 <ul>
-<li><code>#children</code> (récursif <code>#allChildren</code>), ex: Package -&gt; Class -&gt; Method</li>
+<li><code>#children</code> (récursif <code>#allChildren</code>), ex: Package -&gt; Package -&gt; Class</li>
 <li><code>#parents</code> (récursif <code>#allParents</code>), ex: Method -&gt; Class -&gt; Package</li>
 <li>Scopes : Cherche les ascendants ou descendants ayant un type donné
 <ul>
-<li><code>#children</code>/<code>#parents</code> ne sélectionnent pas le type</li>
 <li>peut &quot;sauter&quot; des niveaux: <code>methodeA atScope: FamixJavaPackage</code></li>
-<li><code>#atScope: &lt;Type&gt;</code>, recherche les &quot;parents&quot; (récursif <code>#allAtScope:</code>)</li>
-<li><code>#toScope: &lt;Type&gt;</code>, recherche les &quot;enfants&quot; (récursif <code>#allAtScope:</code>)</li>
+<li><code>#atScope: &lt;Type&gt;</code>, recherche ascendante (récursif <code>#allAtScope:</code>)</li>
+<li><code>#toScope: &lt;Type&gt;</code>, recherche descendante (récursif <code>#allToScope:</code>)</li>
 </ul>
 </li>
 </ul>
@@ -88,21 +87,20 @@
 <li>ex: <code>packageX queryAllIncoming opposites</code></li>
 </ul>
 </li>
-<li><code>#query: &lt;in/out&gt; with: &lt;association&gt;</code>
+<li><code>#query: &lt;#in/#out&gt; with: &lt;association&gt;</code>
 <ul>
 <li>ex: <code>methodA query: #in with: FamixJavaInvocation</code></li>
 </ul>
 </li>
-<li>composition :<br />
+<li>composition de requêtes (tous les packages dépendant de <em>packageX</em>):<br />
 <code>packageX queryAllIncoming opposites atScope: FamixJavaPackage</code></li>
 </ul>
 <footer>Famix -- Méta-modèle logiciel composable</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-footer="Famix -- Méta-modèle logiciel composable" data-heading-divider="1" data-marpit-pagination="7" data-marpit-pagination-total="10" style="--paginate:true;--footer:Famix -- Méta-modèle logiciel composable;--heading-divider:1;">
-<h1>Famix Java</h1>
+<h1>Famix Java -- Exercice</h1>
 <ul>
-<li>Regardez les attributs des principales entités</li>
-<li><code>FamixJavaModel</code></li>
+<li>Rechercher les attributs des principales entités</li>
 <li><code>FamixJavaPackage</code></li>
 <li><code>FamixJavaClass</code>, <code>FamixJavaInterface</code>, <code>FamixJavaEnum</code>, ...</li>
 <li><code>FamixJavaMethod</code></li>

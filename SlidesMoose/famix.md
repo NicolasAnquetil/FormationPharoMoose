@@ -31,7 +31,7 @@ author: Nicolas Anquetil
 - Navigation dans un modèle
 - Trouver les sous-classes de  `BLLazyServerPojo`
   - En Pharo (méthodes sur les collections, accesseurs)
-  - Dans l'*Inspecteur*
+  - Dans l'*Inspecteur* (inspectez le modèle)
   - Avec l'API *Moose Query*
 
 # MooseQuery
@@ -43,28 +43,26 @@ author: Nicolas Anquetil
 
 # *Cheat sheet* -- MooseQuery, parents/enfants
 
-- `#children` (récursif `#allChildren`), ex: Package -> Class -> Method
+- `#children` (récursif `#allChildren`), ex: Package -> Package -> Class
 - `#parents` (récursif `#allParents`), ex: Method -> Class -> Package
 - Scopes : Cherche les ascendants ou descendants ayant un type donné
-  - `#children`/`#parents` ne sélectionnent pas le type
   - peut "sauter" des niveaux: `methodeA atScope: FamixJavaPackage`
-  - `#atScope: <Type>`, recherche les "parents" (récursif `#allAtScope:`)
-  - `#toScope: <Type>`, recherche les "enfants" (récursif `#allAtScope:`)
+  - `#atScope: <Type>`, recherche ascendante (récursif `#allAtScope:`)
+  - `#toScope: <Type>`, recherche descendante (récursif `#allToScope:`)
 
 # *Cheat sheet* -- MooseQuery, "voisins"
 
 - `#queryAllIncoming`/`#queryAllOutgoing` retournent toutes les *associations* (FamixJavaInheritance, FamixJavaInvocation, ...)
     - rajouter `#opposites` pour avoir les entités au bout des associations
     - ex: `packageX queryAllIncoming opposites`
-- `#query: <in/out> with: <association>`
+- `#query: <#in/#out> with: <association>`
   - ex: `methodA query: #in with: FamixJavaInvocation`
-- composition :
+- composition de requêtes (tous les packages dépendant de *packageX*):
 `packageX queryAllIncoming opposites atScope: FamixJavaPackage`
 
-# Famix Java
+# Famix Java -- Exercice
 
-- Regardez les attributs des principales entités
-- `FamixJavaModel`
+- Rechercher les attributs des principales entités
 - `FamixJavaPackage`
 - `FamixJavaClass`, `FamixJavaInterface`, `FamixJavaEnum`, ...
 - `FamixJavaMethod`

@@ -133,11 +133,18 @@ False >> ifTrue: trueAlternativeBlock ifFalse: falseAlternativeBlock
 
 # Méthodes remarquables
 
+- `#initialize` constructeur 
 - `#subclassResponsibility` pour les méthodes abstraites
 - `#yourself` retourne le receveur (fin de cascade)
 - `#shouldNotImplement` invalide une méthode héritée :-(
 -  `#halt`, `#haltIf: [...]` point d'arrêt (*breakpoint*)
 - `#flag:` ne fait rien, message à l'intention du dévelopeur
+
+# Les classes sont des objets
+
+- Méthodes "coté classe" (méthodes statique) ex: `new`
+- Variables de classe
+- API reflexive (`Object methods` donne une colelction de `CompiledMethod`)
 
 # Les traits
 

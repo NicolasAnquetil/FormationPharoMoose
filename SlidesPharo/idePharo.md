@@ -16,9 +16,9 @@ author: Nicolas Anquetil
 - TestRunner (Tests unitaires)
 - Debugger
 
-# Application
+# Mise en application
 
-Exercice pratique mélant les trois outils (édition de code, gestion de version, tests unitaires).
+Exercice pratique mélant les outils (édition de code, gestion de version, tests unitaires, *debugger*(?) ).
 
 Créer une classe pour automatiser la recherche de DTOs :
 - à partir de leur super-classe (`BLLazyServerPojo`)
@@ -28,7 +28,16 @@ v. exercices à la fin de [Pharo -- Environnement d'exécution](./execPharo.html
 
 # SystemBrowser
 
-![SystemBrowser h:550](./Images/systemBrowser.png)
+![bg right:55% h:500](./Images/systemBrowser.png)
+
+- Édition du code
+- menu `Browse`
+
+# Commandes de base
+
+- `ctrl-m` : *implementors*, toutes les implémentation d'une méthode
+- `ctrl-n` : *senders*, toutes les utilisation d'une méthode (ou une classe)
+- `ctrl-b` : *SystemBrowser* sur une classe
 
 # Exercice simple
 
@@ -38,10 +47,10 @@ Note: Pas de triche, ne pas regarder la méthode `factorial`
 
 # Iceberg
 
-- Interface utilisateur pour GIT (Connait  GitHub et GitLab)
-- Interface aux actions courantes (Push, Pull, Fetch, Commit)
-- Gestion des branches (création, checkout, merge)
-- Gestion des "*remotes*"
+- Interface utilisateur pour GIT (GitHub et GitLab)
+- Interface aux actions courantes (*push*, *pull*, *fetch*, *commit*)
+- Gestion des branches (création, *checkout*, *merge*)
+- Gestion des *remotes*
 - etc.
 
 # Iceberg
@@ -65,7 +74,47 @@ Note: Pas de triche, ne pas regarder la méthode `factorial`
 
 ![TestRunner h:550](./Images/testRunner.png)
 
+# Autres outils
 
+- Spotter
+- Finder
+- Epicea (*Code changes*)
+- Profiler
+
+# Spotter
+
+![bg right:60% h:450](./Images/spotter.png)
+
+- Recherche textuelle
+  - classes
+  - méthodes (*implementors*)
+  - *help*
+  - Fenêtres
+- `<shift-enter>`
+
+# Finder
+
+![bg right:55% h:550](./Images/finder.png)
+
+- Recherches
+  - à partir d'exemples
+  - contenu de méthodes
+  - *implementors*
+- menu `Browse`
+
+# Epicea
+
+![bg right:60% h:550](./Images/epicea.png)
+
+- Local code history
+- menu `Sources` > `Code Changes`
+
+# Profiler
+
+![bg right:55% h:600](./Images/profiler.png)
+
+- menu `Debug`
+- `[ ... ] timeProfile`
 
 # Exercice -- Initialisation Pharo
 

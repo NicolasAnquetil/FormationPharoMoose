@@ -14,33 +14,39 @@ author: Nicolas Anquetil
 - Transcript
 - Inspector
 
-# Environnement d'exécution
+# Playground
 
 ![bg right:55% h:500](./Images/moosePlayground.png)
 
-- Playground
-  - "Live environment"
-  - Une "console" pour manipuler des objets
+- "Live environment"
+- Une "console" pour manipuler des objets
 - ex : "Print it" (ctrl-P) sur
   ```
   #( 6 45 36 8 3 ) median
   ```
 
-# Environnement d'exécution
+# Transcript
 
 ![bg right:55% h:500](./Images/transcript.png)
 
-- Transcript
-  - Affichage de traces
+- Affichage de traces
 ```
 'hello' trace.
 Character space trace.
 'the world' tarceCr.
 ```
 
+# Inspector
+
+![bg right:60% h:600](./Images/inspector.png)
+
+- Inspecter le contenu d'un objet (variables d'instances)
+- Onglets changent en fonction de la classe de l'objet
+- Onglets "universels" : `Raw`, `Meta`
+
 # Environnement d'exécution
 
-- Que fait ?
+- Exercice : Que fait ?
 ```
 | rnd |
 rnd := Random new.
