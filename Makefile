@@ -1,8 +1,10 @@
 
-all: slidesPharo slidesMoose
+%.html :
+	cd `basename $@ ".html"` ; make all
 
-slidesPharo:
-	cd SlidesPharo ; make
+%.pdf :
+	cd `basename $@ ".pdf"` ; make pdf
 
-slidesMoose:
-	cd SlidesMoose ; make
+all: SlidesPharo.html SlidesMoose.html
+
+pdf: SlidesPharo.pdf SlidesMoose.pdf

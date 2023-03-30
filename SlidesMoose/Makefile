@@ -3,7 +3,7 @@
 	npx marp $<
 
 %.pdf : %.md
-	npx marp --pdf $<
+	npx marp --pdf --allow-local-files $<
 
 all: moose.html famix.html mooseIDE.html
 
