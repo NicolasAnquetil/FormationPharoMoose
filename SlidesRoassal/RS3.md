@@ -156,6 +156,7 @@ RSLineBuilder line
 Créer des liens entre les classes et leur super classe.
 Disposer les classe de façon à obtenir une arborescence.
 <!-- _backgroundColor: #00900020 -->
+<!-- _color: white -->
 ![bg 85% right:40%](images/treeclasses.png)
 
 # Les évènements
@@ -182,6 +183,7 @@ Ajouter une interaction de votre choix sur les classes.
 Ajouter un évènement sur chaque forme, permettant d'inspecter son modèle avec un clic droit.
 
 <!-- _backgroundColor: #00900020 -->
+<!-- _color: white -->
 
 # Quelques outils Roassal
 
@@ -207,6 +209,7 @@ Modifier votre visualisation afin d'adapter la taille des classes en fonction de
 - La couleur : nombre de ligne de code
 
 <!-- _backgroundColor: #00900020 -->
+<!-- _color: white -->
 ---
 ![bg 80% center](images/systemcpx.png)
 ---
