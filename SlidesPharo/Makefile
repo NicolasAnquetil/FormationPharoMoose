@@ -15,11 +15,14 @@ langage = Images/pharoSyntax.png
 
 ide = Images/systemBrowser.png Images/testRunner.png Images/spotter.png Images/finder.png Images/epicea.png Images/profiler.png
 
+spec = Images/mvp.png Images/defaultLayout.svg Images/initializepresenters.svg Images/connectPresenters.svg \
+    Images/setmodel.svg
+
 # rules
 
-all: introPharo.html langagePharo.html execPharo.html idePharo.html
+all: introPharo.html langagePharo.html execPharo.html idePharo.html spec.html
 
-pdf: introPharo.pdf langagePharo.pdf execPharo.pdf idePharo.pdf
+pdf: introPharo.pdf langagePharo.pdf execPharo.pdf idePharo.pdf spec.pdf
 
 introPharo.html: $(intro)
 
@@ -36,3 +39,7 @@ langagePharo.pdf: $(langage)
 idePharo.html: $(ide)
 
 idePharo.pdf: $(ide)
+
+spec.html: $(spec)
+
+spec.pdf: $(spec)

@@ -19,7 +19,7 @@ author: Santiago Bragagnolo
 
 
 # The MVP pattern
-![bg right h:500](./Images/mvp.png)
+![bg right:55% h:450](./Images/mvp.png)
 
 - Model
 - View
@@ -31,71 +31,83 @@ author: Santiago Bragagnolo
 # Defining a presenter
 
 
-- Subclass SpPresenter
-    - defaultLayout
-    - initializePresenters
-    - connectPresenter
+- Subclass `SpPresenter`
+    - `#defaultLayout`
+    - `#initializePresenters`
+    - `#connectPresenter`
 
 
 
-# Defining defaultLayout
-![bg right h:300](./Images/defaultLayout.svg)
+# #defaultLayout
+![bg right:45% h:300](./Images/defaultLayout.svg)
 
-```
-  defaultLayout
-
-	^ SpBoxLayout newLeftToRight
-		  add: (SpBoxLayout newTopToBottom
-				   add: #title height: self toolbarHeight;
-				   add: #date height: self toolbarHeight;
-				   add: #details);
-		  add: (SpBoxLayout newTopToBottom
-				   add: #name height: self toolbarHeight;
-				   add: #table;
-				   add: (SpBoxLayout newLeftToRight
-						    add: #ok;
-						    add: #cancel));
-		  yourself
+```St
+defaultLayout
+  ^ SpBoxLayout newLeftToRight
+      add: (SpBoxLayout newTopToBottom
+        add: #title
+          height: self toolbarHeight;
+        add: #date
+          height: self toolbarHeight;
+        add: #details);
+      add: (SpBoxLayout newTopToBottom
+        add: #name
+          height: self toolbarHeight;
+        add: #table;
+        add: (SpBoxLayout newLeftToRight
+          add: #ok;
+          add: #cancel));
+      yourself
   ```
 
 
-# Defining initializePresenters
-![bg right h:300](./Images/initializepresenters.svg)
+# #initializePresenters
+![bg right:45% h:300](./Images/initializepresenters.svg)
 
-```
-  initializePresenters
-	title := self newDropList .
-	name := self newDropList .
-	date := self newTextInput .
-	details := self newText.
-	table := self newTable.
-	ok := self newButton label:#ok;yourself.
-	cancel := self newButton label:#cancel; yourself.
+```St
+initializePresenters
+  title := self newDropList .
+  name := self newDropList .
+  date := self newTextInput .
+  details := self newText.
+  table := self newTable.
+  ok := self newButton
+    label:#ok;
+	yourself.
+  cancel := self newButton
+    label:#cancel;
+	yourself.
   ```
-# Defining connectPresenters
-![bg right h:300](./Images/connectPresenters.svg)
+# #connectPresenters
+![bg right:45% h:300](./Images/connectPresenters.svg)
 
-```
+```St
 connectPresenters 
-	ok action: [ self inform:'Ok' ].
-	cancel action: [ self inform:'Cancel' ].
+  ok action: [
+    self inform:'Ok'
+  ].
+  cancel action: [
+    self inform:'Cancel'
+  ].
   ```
 
 
 # Binding the model
-![bg right h:300](./Images/setmodel.svg)
+![bg right:45% h:300](./Images/setmodel.svg)
 
+```St
+model: aModel
+  model := aModel.
+  self modelChanged.
 ```
-  model: aModel
-	model := aModel.
-    self modelChanged.
-  
-  modelChanced
-    self fillWidgetWithModel
- 
-  fillWidgetWithModel
-	title selectedItem: model title.
-	name selectedItem: model name. 
-	date text: model birthDate. 
-	details text: model details. 
+```St
+modelChanged
+  self fillWidgetWithModel
+```
+```St
+fillWidgetWithModel
+  title selectedItem: model title.
+  name selectedItem: model name. 
+  date text: model birthDate. 
+  details text: model details. 
   ```

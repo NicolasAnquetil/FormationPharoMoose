@@ -97,8 +97,6 @@ canvas open
 Pour chaque classe de la hiérarchie de la classe `BLLazyServerPojo`, **collecter** un rectangle qui la décrit .
 Le résultat doit être un ensemble de formes.
 Ajouter ces formes dans un canvas et ouvrir le canvas.
-<!-- _backgroundColor: #00900020 -->
-<!-- _color: white -->
 
 # Les layouts
 - Permettent de gérer la disposition des objets sur le canvas
@@ -155,8 +153,6 @@ RSLineBuilder line
 # Application
 Créer des liens entre les classes et leur super classe.
 Disposer les classe de façon à obtenir une arborescence.
-<!-- _backgroundColor: #00900020 -->
-<!-- _color: white -->
 ![bg 85% right:40%](images/treeclasses.png)
 
 # Les évènements
@@ -182,8 +178,6 @@ shape @ RSPopup "Affiche le nom du modèle au passage de la souris"
 Ajouter une interaction de votre choix sur les classes.
 Ajouter un évènement sur chaque forme, permettant d'inspecter son modèle avec un clic droit.
 
-<!-- _backgroundColor: #00900020 -->
-<!-- _color: white -->
 
 # Quelques outils Roassal
 
@@ -208,8 +202,6 @@ Modifier votre visualisation afin d'adapter la taille des classes en fonction de
 - La largeur : nombre d'attributs de la classe
 - La couleur : nombre de ligne de code
 
-<!-- _backgroundColor: #00900020 -->
-<!-- _color: white -->
 ---
 ![bg 80% center](images/systemcpx.png)
 ---
