@@ -26,7 +26,10 @@ author: Santiago Bragagnolo
 - Presenter 
 
 
-
+# Presenter
+  - Spec generates automatically the view for a presenter
+  - A presenter is composed of simpler presenters
+  
 
 # Defining a presenter
 
@@ -37,6 +40,23 @@ author: Santiago Bragagnolo
     - `#connectPresenter`
 
 
+# #initializePresenters
+![bg right:45% h:500](./Images/initializepresenters.svg)
+
+```St
+initializePresenters
+  title := self newDropList .
+  name := self newDropList .
+  date := self newTextInput .
+  details := self newText.
+  table := self newTable.
+  ok := self newButton
+    label:#ok;
+	yourself.
+  cancel := self newButton
+    label:#cancel;
+	yourself.
+  ```
 
 # #defaultLayout
 ![bg right:45% h:300](./Images/defaultLayout.svg)
@@ -61,23 +81,7 @@ defaultLayout
   ```
 
 
-# #initializePresenters
-![bg right:45% h:300](./Images/initializepresenters.svg)
 
-```St
-initializePresenters
-  title := self newDropList .
-  name := self newDropList .
-  date := self newTextInput .
-  details := self newText.
-  table := self newTable.
-  ok := self newButton
-    label:#ok;
-	yourself.
-  cancel := self newButton
-    label:#cancel;
-	yourself.
-  ```
 # #connectPresenters
 ![bg right:45% h:300](./Images/connectPresenters.svg)
 
