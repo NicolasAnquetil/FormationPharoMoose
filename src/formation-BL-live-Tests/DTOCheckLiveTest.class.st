@@ -78,3 +78,17 @@ DTOCheckLiveTest >> testServiceDTO [
 
 	self assert: (checker serviceDTO: famixMethod) size equals: 1
 ]
+
+{ #category : #tests }
+DTOCheckLiveTest >> testServices [
+
+	| famixClass famixMethod famixParam |
+	famixClass := self entity: FamixJavaClass named: 'famixJavaClass'.
+	famixMethod := (self entity: FamixJavaMethod named: 'famixJavaMethod')
+		               parentType: famixClass;
+		               isPublic: true;
+		               yourself.
+
+
+	self assert: (checker services: famixClass) size equals: 1
+]

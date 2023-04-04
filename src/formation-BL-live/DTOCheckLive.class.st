@@ -47,5 +47,22 @@ DTOCheckLive >> regexpTypes: aString [
 { #category : #api }
 DTOCheckLive >> serviceDTO: aFamixJavaMethod [
 
-	^ aFamixJavaMethod parameters select: [ :param | self canBeDTOS: param ] thenCollect: [ :param | param declaredType ]
+	aFamixJavaMethod isPublic ifFalse: [ ^ #(  ) ].
+	^ ((self canBeDTOS: aFamixJavaMethod)
+		   ifTrue: [ { aFamixJavaMethod declaredType } ]
+		   ifFalse: [ #(  ) ])
+		 , (aFamixJavaMethod parameters
+		   select: [ :param | self canBeDTOS: param ]
+		   thenCollect: [ :param | param declaredType ])
+]
+
+{ #category : #api }
+DTOCheckLive >> services: aClass [
+
+	"créer une méthode #services: qui recherche les méthodes d'une classe pouvant être des services (publique, pas constructeur, pas <Initializer>)"
+
+	^ aClass methods select: [ :method | 
+		  method isPublic and: [ 
+			  method isConstructor not and: [ 
+				  (method name ~= '<Initializer>') ] ] ]
 ]
