@@ -97,7 +97,16 @@ FamixMMUMLDocumentor new
   model: FamixModel ;
   generatePlantUMLModel.
 ```
-- Le *blog post* [https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html](https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html) donne un peu plus de détails
+- *Blog post* : [https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html](https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html)
+- *Blog post* : [https://modularmoose.org/2021/07/19/automatic-metamodel-documentation-generation.html](https://modularmoose.org/2021/07/19/automatic-metamodel-documentation-generation.html)
+
+# Création de méta-modèle
+
+- *Blog post* [https://modularmoose.org/2021/02/15/Coasters.html](https://modularmoose.org/2021/02/15/Coasters.html)
+- Conseils
+  - Inspirer vous d'un méta-modèle existant (ex: FamixJava)
+  - Utiliser au maximum les Traits Famix existants
+  - Ne commencer que quand le méta-modèle est clair et complet
 
 # VerveineJ
 
@@ -123,3 +132,4 @@ FamixMMUMLDocumentor new
   - Vérifier qu'on a accès à son code source (*Inspector*, onglet "SourceText")
   - Appeler `generateFastAndBind` sur cette méthode
   - Inspecter le contenu de `fast` sur la méthode (onglets : "Tree" et "SourceText")
+  - *Blog post* [https://modularmoose.org/2022/06/30/carrefour.html](https://modularmoose.org/2022/06/30/carrefour.html)
