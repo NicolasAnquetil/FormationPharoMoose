@@ -32,7 +32,7 @@ author: Nicolas Anquetil
 - Trouver les sous-classes de  `BLLazyServerPojo`
   - En Pharo (méthodes sur les collections, accesseurs)
   - Dans l'*Inspecteur* (inspectez le modèle)
-  - Avec l'API *Moose Query*
+  - Avec l'API *Moose Query* (v. ci-dessous)
 
 # MooseQuery
 
@@ -77,6 +77,28 @@ author: Nicolas Anquetil
   - `FamixTSourceEntity` (propriété `sourceAnchor` de type ... ?)
   - `FamixJavaSourceAnchor` (note : en lien avec le `rootFolder` du modèle)
 
+# UML
+
+- génération d'un script PlantUML pour repreśenter un méta-modèle Famix
+```St
+FamixMMUMLDocumentor new
+  beWithStub ;
+  model: FamixJavaModel ;
+  generatePlantUMLModel.
+```
+- importer le script dans [plantuml.com](plantuml.com)
+- pour avoir tous les traits Famix, faire la commande ci-dessus sur le méta-modèle `FamixModel`
+
+# UML
+
+- pour avoir tous les traits Famix, générer le UML :
+```St
+FamixMMUMLDocumentor new
+  model: FamixModel ;
+  generatePlantUMLModel.
+```
+- Le *blog post* [https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html](https://modularmoose.org/2021/06/04/plantUML-for-metamodel.html) donne un peu plus de détails
+
 # VerveineJ
 
 - Création d'un modèle FamixJava
@@ -91,4 +113,13 @@ author: Nicolas Anquetil
 - Pour des analyses plus poussées (ou migration), il faut un AST complet
 - FASTJava (Famix-AST)
   - *Carrefour* permet la création, au vol, de l'AST d'une `FamixJavaMethod`
+  - À condition d'avoir accès au code source de la méthode
   - [https://github.com/moosetechnology/Carrefour](https://github.com/moosetechnology/Carrefour)
+
+  # *Carrefour*
+
+  - Charger *Carrefour* dans l'image ( /!\ )
+  - Choisir une `FamixJavaMethod` (non stub)
+  - Vérifier qu'on a accès à son code source (*Inspector*, onglet "SourceText")
+  - Appeler `generateFastAndBind` sur cette méthode
+  - Inspecter le contenu de `fast` sur la méthode (onglets : "Tree" et "SourceText")

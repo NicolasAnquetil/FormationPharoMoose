@@ -116,6 +116,6 @@ fillWidgetWithModel
 # Exercice
 
 - Créer l'interface suivante
-![height:200%](./Images/mockupSpec.png)
-- Entrer un nom de classe dans le champ texte et cliquer sur "OK" affiche la liste de ses sous-classes
-- version avancée: les sous-classes sont dans une "liste-arbre" montrant l'héritage
+![height:200](./Images/mockupSpec.png)
+- Entrer un nom de classe dans le champ texte et cliquer sur "OK" pour afficher la liste de ses sous-classes
+- version avancée: les sous-classes sont dans une liste hiérarchique montrant l'héritage entre elles
