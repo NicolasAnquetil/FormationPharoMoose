@@ -28,6 +28,19 @@ DTOCheckLiveTest >> setUp [
 ]
 
 { #category : #tests }
+DTOCheckLiveTest >> testDtosFromSuperclass [
+	| childClass parentClass |
+	parentClass:=self entity: FamixJavaClass named: 'BLLazyServerPojo'.
+	childClass:=self entity: FamixJavaClass named: 'BLLazyServerPojoChild'.
+	
+	parentClass addSubInheritance: (FamixJavaInheritance new subclass: childClass; yourself).
+	
+	self assert: (checker dtosFromSuperClass) size equals:1. 
+	
+   
+]
+
+{ #category : #tests }
 DTOCheckLiveTest >> testRegexTypes [
 	
 	self entity: FamixJavaClass named: 'babayaga'.

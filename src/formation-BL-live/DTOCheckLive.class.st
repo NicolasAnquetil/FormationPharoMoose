@@ -11,6 +11,14 @@ Class {
 }
 
 { #category : #accessing }
+DTOCheckLive >> dtosFromSuperClass [
+
+	^ (model allModelClasses detect: [ :class | 
+		 class name = 'BLLazyServerPojo' ]) subclassHierarchy reject: [ 
+		:class | class name includesSubstring: 'Enum' ]
+]
+
+{ #category : #accessing }
 DTOCheckLive >> model [
 
 	^ model
