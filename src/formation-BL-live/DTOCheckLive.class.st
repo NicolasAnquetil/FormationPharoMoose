@@ -12,7 +12,17 @@ Class {
 
 { #category : #testing }
 DTOCheckLive >> canBeDTOS: parameter [
+	"In the case dtos do not have a declaredType, I should return false by default"
+	parameter declaredType ifNil: [ ^ false ].
 	^ parameter declaredType isStub not
+]
+
+{ #category : #accessing }
+DTOCheckLive >> dtosFromServices [
+
+	^ ((model allModelClasses select: [ :c | c name beginsWith: 'Uc' ]) 
+		    flatCollect: [ :ucClass | self services: ucClass ]) 
+		   flatCollect: [ :ucMethod | self serviceDTO: ucMethod ] as: Set
 ]
 
 { #category : #accessing }
