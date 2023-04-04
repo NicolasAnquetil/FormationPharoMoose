@@ -10,6 +10,11 @@ Class {
 	#category : #'formation-BL-live'
 }
 
+{ #category : #testing }
+DTOCheckLive >> canBeDTOS: parameter [
+	^ parameter declaredType isStub not
+]
+
 { #category : #accessing }
 DTOCheckLive >> dtosFromSuperClass [
 
@@ -37,4 +42,10 @@ DTOCheckLive >> regexpTypes: aString [
 	^ model allModelClasses select: [ :class | newRegex asRegex matches: class name ].
 	
 
+]
+
+{ #category : #api }
+DTOCheckLive >> serviceDTO: aFamixJavaMethod [
+
+	^ aFamixJavaMethod parameters select: [ :param | self canBeDTOS: param ] thenCollect: [ :param | param declaredType ]
 ]

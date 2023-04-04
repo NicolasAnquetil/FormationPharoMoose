@@ -64,3 +64,17 @@ DTOCheckLiveTest >> testRegexTypesPartialRegex [
 	
 
 ]
+
+{ #category : #tests }
+DTOCheckLiveTest >> testServiceDTO [
+
+	| famixClass famixMethod famixParam |
+	famixClass := self entity: FamixJavaClass named: 'famixJavaClass'.
+	famixMethod := self entity: FamixJavaMethod named: 'famixJavaMethod'.
+	famixParam := self entity: FamixJavaParameter named: 'myFirstParam'.
+
+	famixParam parentBehaviouralEntity: famixMethod.
+	famixParam declaredType: famixClass.
+
+	self assert: (checker serviceDTO: famixMethod) size equals: 1
+]
