@@ -32,11 +32,30 @@ author: Santiago Bragagnolo
 
 
 - Subclass `SpPresenter`
+- Often 1 instance variable per internal wideget
+- Overrides methods:
     - `#defaultLayout`
     - `#initializePresenters`
     - `#connectPresenter`
 
 
+# #initializePresenters
+![bg right:45% h:300](./Images/initializepresenters.svg)
+
+```St
+initializePresenters
+  title := self newDropList .
+  name := self newDropList .
+  date := self newTextInput .
+  details := self newText.
+  table := self newTable.
+  ok := self newButton
+    label:#ok;
+	yourself.
+  cancel := self newButton
+    label:#cancel;
+	yourself.
+  ```
 
 # #defaultLayout
 ![bg right:45% h:300](./Images/defaultLayout.svg)
@@ -60,24 +79,6 @@ defaultLayout
       yourself
   ```
 
-
-# #initializePresenters
-![bg right:45% h:300](./Images/initializepresenters.svg)
-
-```St
-initializePresenters
-  title := self newDropList .
-  name := self newDropList .
-  date := self newTextInput .
-  details := self newText.
-  table := self newTable.
-  ok := self newButton
-    label:#ok;
-	yourself.
-  cancel := self newButton
-    label:#cancel;
-	yourself.
-  ```
 # #connectPresenters
 ![bg right:45% h:300](./Images/connectPresenters.svg)
 
@@ -111,3 +112,10 @@ fillWidgetWithModel
   date text: model birthDate. 
   details text: model details. 
   ```
+
+# Exercice
+
+- Créer l'interface suivante
+![height:200%](./Images/mockupSpec.png)
+- Entrer un nom de classe dans le champ texte et cliquer sur "OK" affiche la liste de ses sous-classes
+- version avancée: les sous-classes sont dans une "liste-arbre" montrant l'héritage
