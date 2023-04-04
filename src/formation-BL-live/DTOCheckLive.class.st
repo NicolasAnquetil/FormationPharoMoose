@@ -24,8 +24,9 @@ DTOCheckLive >> model: anObject [
 
 { #category : #accessing }
 DTOCheckLive >> regexpTypes: aString [ 
-	
-	^ model allModelClasses select: [ :class | aString asRegex matches: class name ].
+   |newRegex|
+	newRegex := '.*',aString,'.*'.
+	^ model allModelClasses select: [ :class | newRegex asRegex matches: class name ].
 	
 
 ]

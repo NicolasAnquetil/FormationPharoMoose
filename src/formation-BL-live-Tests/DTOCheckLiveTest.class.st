@@ -38,3 +38,16 @@ DTOCheckLiveTest >> testRegexTypes [
 	
 
 ]
+
+{ #category : #tests }
+DTOCheckLiveTest >> testRegexTypesPartialRegex [
+	
+	self entity: FamixJavaClass named: 'babayaga'.
+	self entity: FamixJavaClass named: 'baby'.
+
+	self assert: (checker regexpTypes: 'bay') size equals: 1.
+	self assert: (checker regexpTypes: 'bay') anyOne name equals: 'babayaga'.
+	
+	
+
+]
