@@ -157,7 +157,7 @@ setUp
 
 - créer une méthode `#regexpTypes: <regexp>` pour rechercher les types dont le nom matche la regexp
     - faire un commit
-- créer une méthode `#dtosFromSuperclass` pour trouver les classes qui heritent de `BLLazyServerPojo` et dont le nom ne contient pas 'Enum'
+- créer une méthode `#dtosFromSuperclass` pour trouver les classes qui héritent de `BLLazyServerPojo` et dont le nom ne contient pas 'Enum'
     -  faire un commit
 
 # Exercice
@@ -170,7 +170,7 @@ setUp
 
 # Exercice
 
-- créer une méthode `#dtosFromServices` pour trouver les DTOs en parmètre des services des classes dont lenom commence par 'Uc'
+- créer une méthode `#dtosFromServices` pour trouver les DTOs en paramètre des services des classes dont le nom commence par 'Uc'
     - faire un commit
 
 Étape supplémentaire comparer les résultats de  `#dtosFromSuperclass` et `#dtosFromServices` sur le modèle *Omaje*

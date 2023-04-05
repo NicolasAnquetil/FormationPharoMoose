@@ -41,7 +41,7 @@ Character space trace.
 ![bg right:60% h:600](./Images/inspector.png)
 
 - Inspecter le contenu d'un objet (variables d'instances)
-- Onglets changent en fonction de la classe de l'objet
+- Onglets dépendent de la classe de l'objet
 - Onglets "universels" : `Raw`, `Meta`
 
 # Environnement d'exécution
@@ -53,9 +53,16 @@ rnd := Random new.
 5 timesRepeat: [ (rnd nextIntegerBetween: 1 and: 50) asString traceCr ]
 ```
 
-# Exercices sur les collections
+# Exercices
 
-À faire dans un Playground:
+À faire dans un *Playground* :
+
+- Additionner 2 nombres et afficher "pair" ou "impair" selon le résultat
+ex : `2 + 3 ...` affiche `impair`
+- Faire un bloc avec 2 paramètres qui retourne une chaîne de caractères
+"<x> + <y> est <pair/impair>"
+
+# Exercices sur les collections
 
 - Trouver la superclasse des DTOs : `BLLazyServerPojo`
 - Trouver tous les DTOs (sous-classes de `BLLazyServerPojo`)
@@ -68,7 +75,6 @@ rnd := Random new.
 - Trouver les sous-classes de `UserTypeEnumAbstract` dont le nom ne commence pas par 'Enum'
 - Trouver les sous-classes de `BLLazyServerPojo` dont le nom ne contient pas 'Abstract', 'DTO', ou 'Enum'
 - Trouver les classes dont le nom contient 'DTO' qui n'heritent pas de `BLLazyServerPojo` (ex: `ProductDTO`)
-
 
 # *Cheat Sheet* -- Pharo
 
@@ -86,4 +92,4 @@ rnd := Random new.
 - Les sous-classes d'une classe :
   - `#directSubclasses`
   - `#subclassHierarchy`
-- Test si une classe est déclarée abstraite: `#isAbstract`
+- Tester si une classe est déclarée abstraite: `#isAbstract`
