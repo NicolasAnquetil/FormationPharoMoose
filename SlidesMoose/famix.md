@@ -107,6 +107,7 @@ FamixMMUMLDocumentor new
   - Inspirer vous d'un méta-modèle existant (ex: FamixJava)
   - Utiliser au maximum les Traits Famix existants
   - Ne commencer que quand le méta-modèle est clair et complet
+- créer un méta-modèle est une *longue* tâche, après 20 ans, FamixJava n'est toujours pas complètement fini
 
 # VerveineJ
 
