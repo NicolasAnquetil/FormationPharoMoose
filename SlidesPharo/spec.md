@@ -26,7 +26,10 @@ author: Santiago Bragagnolo
 - Presenter 
 
 
-
+# Presenter
+  - Spec generates automatically the view for a presenter
+  - A presenter is composed of simpler presenters
+  
 
 # Defining a presenter
 
@@ -40,7 +43,7 @@ author: Santiago Bragagnolo
 
 
 # #initializePresenters
-![bg right:45% h:300](./Images/initializepresenters.svg)
+![bg right:45% h:500](./Images/initializepresenters.svg)
 
 ```St
 initializePresenters
