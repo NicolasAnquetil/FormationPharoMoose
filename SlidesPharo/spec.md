@@ -26,7 +26,10 @@ author: Santiago Bragagnolo
 - Presenter 
 
 
-
+# Presenter
+  - Spec generates automatically the view for a presenter
+  - A presenter is composed of simpler presenters
+  
 
 # Defining a presenter
 
@@ -40,7 +43,7 @@ author: Santiago Bragagnolo
 
 
 # #initializePresenters
-![bg right:45% h:300](./Images/initializepresenters.svg)
+![bg right:45% h:500](./Images/initializepresenters.svg)
 
 ```St
 initializePresenters
@@ -116,6 +119,6 @@ fillWidgetWithModel
 # Exercice
 
 - Créer l'interface suivante
-![height:200%](./Images/mockupSpec.png)
-- Entrer un nom de classe dans le champ texte et cliquer sur "OK" affiche la liste de ses sous-classes
-- version avancée: les sous-classes sont dans une "liste-arbre" montrant l'héritage
+![height:200](./Images/mockupSpec.png)
+- Entrer un nom de classe dans le champ texte et cliquer sur "OK" pour afficher la liste de ses sous-classes
+- version avancée: les sous-classes sont dans une liste hiérarchique montrant l'héritage entre elles
